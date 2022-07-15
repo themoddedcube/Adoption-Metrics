@@ -1,0 +1,30 @@
+<html>
+   <body > 
+      <style>
+         body {
+            background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+         }
+
+         button{
+            background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+         }
+          
+         </style>
+      <form action = "http://127.0.0.1:5000/" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <p> <button name = "Generate Regular Graph" type = "submit">Generate Regular Graph</button></p>
+      </form> 
+
+      <form action = "http://127.0.0.1:5000/bar-graph" method = "POST" 
+         enctype = "multipart/form-data">
+         <p><button name = "Generate Bar Graph" type = "submit">Generate Bar Graph</button></p>
+      </form>    
+      
+      <form action = "http://127.0.0.1:5000/pie-graph" method = "POST" 
+         enctype = "multipart/form-data">
+         <p><button name = "Generate Pie Graph" type = "submit">Generate Pie Graph</button></p>
+      </form> 
+   
+   </body>
+</html>
