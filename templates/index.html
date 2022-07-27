@@ -10,21 +10,47 @@
          }
           
          </style>
+         <script>
+            function showGraph() {
+                let image = document.getElementById("graph");
+     
+                image.src = "http://127.0.0.1:5000/graph"
+     
+                document.getElementById("btnID")
+                        .style.display = "none";
+            }
+            function showBarGraph() {
+               let image = document.getElementById("graph");
+    
+               image.src = "http://127.0.0.1:5000/bar-graph"
+    
+               document.getElementById("btnID")
+                       .style.display = "none";
+           }
+           function showPieGraph() {
+            let image = document.getElementById("graph");
+ 
+            image.src = "http://127.0.0.1:5000/pie-graph"
+ 
+            document.getElementById("btnID")
+                    .style.display = "none";
+        }
+        </script>
       <form action = "http://127.0.0.1:5000/" method = "POST" 
          enctype = "multipart/form-data">
          <input type = "file" name = "file" />
-         <p> <button name = "Generate Regular Graph" type = "submit">Generate Regular Graph</button></p>
-      </form> 
-
-      <form action = "http://127.0.0.1:5000/bar-graph" method = "POST" 
-         enctype = "multipart/form-data">
-         <p><button name = "Generate Bar Graph" type = "submit">Generate Bar Graph</button></p>
-      </form>    
+         <p> <button type="button" id="btnID"></button></p>
+      </form>          
+         <p> <button type="button"onclick="showGraph()" id="btnID">Show Regular Graph</button></p>
       
-      <form action = "http://127.0.0.1:5000/pie-graph" method = "POST" 
-         enctype = "multipart/form-data">
-         <p><button name = "Generate Pie Graph" type = "submit">Generate Pie Graph</button></p>
-      </form> 
+         <p> <button type="button"onclick="showBarGraph()" id="btnID">Show Bar Graph</button></p>
+      
+         <p> <button type="button"onclick="showPieGraph()" id="btnID">Show Pie Graph</button></p>
+
+      <p>
+         <img id="graph" src="" width="1650" height="680"/>
+      </p>
+      
    
    </body>
 </html>

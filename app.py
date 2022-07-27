@@ -12,7 +12,7 @@ from collections import OrderedDict
 app = Flask(__name__)
 app.secret_key = 'secret_key'
 app.config['UPLOAD_FOLDER'] = "/upload"
-
+    
 @app.route('/')
 def upload_fil():
    return render_template('index.html')
@@ -50,6 +50,7 @@ def pie():
 
 @app.route('/graph', methods = ['GET', 'POST'])
 def build_graph():
+   #session.clear()
    zed = session.get("f", str)
    with open(zed,'r') as f:
     data = json.loads(f.read())
@@ -88,6 +89,7 @@ def build_graph():
 
 @app.route('/bar-graph', methods = ['GET', 'POST'])
 def build_graph_pie():
+   #session.clear()
    zed = session.get("f", str)
    with open(zed,'r') as f:
     data = json.loads(f.read())
@@ -126,6 +128,7 @@ def build_graph_pie():
 
 @app.route('/pie-graph', methods = ['GET', 'POST'])
 def build_pie_pie():
+   #session.clear()
    zed = session.get("f", str)
    with open(zed,'r') as f:
     data = json.loads(f.read())
@@ -197,3 +200,4 @@ def build_pie_pie():
 
 if __name__ == '__main__':
    app.run(debug = True)
+   
